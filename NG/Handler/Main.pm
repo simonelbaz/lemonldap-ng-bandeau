@@ -302,7 +302,7 @@ sub run {
         Lemonldap::NG::Handler::Main::Logger->lmLog( "Access control skipped",
             'debug' );
         $class->updateStatus('SKIP');
-        $class->hideCookie;
+        #$class->hideCookie;
         $class->cleanHeaders;
         return OK;
     }
@@ -338,7 +338,7 @@ sub run {
         }
 
         # Hide Lemonldap::NG cookie
-        $class->hideCookie;
+        #$class->hideCookie;
 
         # Log access granted
         Lemonldap::NG::Handler::Main::Logger->lmLog(
@@ -361,7 +361,7 @@ sub run {
         Lemonldap::NG::Handler::Main::Logger->lmLog(
             "No valid session but unprotected access", 'debug' );
         $class->updateStatus('UNPROTECT');
-        $class->hideCookie;
+        #$class->hideCookie;
         $class->cleanHeaders;
         return OK;
     }
